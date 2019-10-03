@@ -30,11 +30,18 @@ const userSchema = new mongoose.Schema({
     password: String
 });
 
+<<<<<<< HEAD
 //defining our secret ? in env file/ scret key
 //const secret = "Thisisourlittlesecret.";
 //process.env.SECRET
 //userSchema below is for plugin is for encrypting fields
 //userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"] }); // encript only certain fields with the mongoose plug in if multiple fields add a coma to the array
+=======
+//defining our secret ? in env file/ scret key // if real app a big nono
+//const secret = "Thisisourlittlesecret.";  //if real app a big nono
+//process.env.SECRET   //if real app a big nono
+userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"] }); // encript only certain fields with the mongoose plug in if multiple fields add a coma to the array
+>>>>>>> ad7f12350778e7aa7ff2ddce7619d35406a66162
 
 
 //calling my userSchema object and const User as the first param
