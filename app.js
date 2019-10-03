@@ -25,9 +25,9 @@ const userSchema = new mongoose.Schema({
     password: String
 });
 
-//defining our secret ? in env file/ scret key
-//const secret = "Thisisourlittlesecret.";
-//process.env.SECRET
+//defining our secret ? in env file/ scret key // if real app a big nono
+//const secret = "Thisisourlittlesecret.";  //if real app a big nono
+//process.env.SECRET   //if real app a big nono
 userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"] }); // encript only certain fields with the mongoose plug in if multiple fields add a coma to the array
 
 
